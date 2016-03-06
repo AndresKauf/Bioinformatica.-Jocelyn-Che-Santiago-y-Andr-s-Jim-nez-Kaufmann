@@ -1683,6 +1683,9 @@ div#notebook {
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="relación-entre-estructura-secundaria-y-terciaria">Relación entre estructura secundaria y terciaria</h1>
 <p><strong>Autores: Jocelyn Cheé Santiago y Andrés Jiménez Kaufmann</strong></p>
+<h2 id="objetivo">Objetivo</h2>
+<p>Comparar la significancia de las predicciones de similitud entre un alineamiento local y dependiente de la sencuencia (BLAST) y un algoritmo que consdiera información estructural (MAMMOTH)</p>
+<h2 id="instrucciones">Instrucciones</h2>
 <h5 id="selecciona-una-superfamilia-de-proteínas-de-scop-httpscop.berkeley.edu-y-extrae-la-secuencia-de-aminoácidos-atom-records-y-las-coordenadas-pdb-de-varios-dominios-de-la-misma.-podéis-ver-un-ejemplo-de-dominio-en-httpscop.berkeley.edusunid29763-y-abajo-están-tanto-la-secuencia-como-una-liga-para-descargar-las-coordenadas.">1) Selecciona una superfamilia de proteínas de SCOP (http://scop.berkeley.edu) y extrae la secuencia de aminoácidos (ATOM records) y las coordenadas PDB de varios dominios de la misma. Podéis ver un ejemplo de dominio en http://scop.berkeley.edu/sunid=29763 , y abajo están tanto la secuencia como una liga para descargar las coordenadas.</h5>
 <p>Se selecciono la superfamilia de las citocromo, de la cual se descargaron los fasta y los pdb de las siguientes entradas:</p>
 <ul>
@@ -1907,13 +1910,45 @@ True
 <li><p>1evzvd vs 1cc5a:</p>
 <p>Query cover: 23%</p>
 <p>Ident: 33%</p></li>
+</ul>
+<p><strong>Alineamiento</strong></p>
+</div>
+</div>
+</div>
+                Query  30  RRGYQVYREVCAACHSL---------DRVAWRT  53
+           R G  V  + C ACH           D  AW+T
+Sbjct  5   RSGDDVVAKYCNACHGTGLLNAPKVGDSAAWKT  37
+
+Query  124  HGGCDYIFSL-LTGYPDEPPAGV  145
+             GG D + +  L+G    PP G 
+Sbjct  42   KGGLDGLLAQSLSGLNAMPPKGT  64
+                
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
 <li><p>1evzd vs 1e8ea:</p>
 <p>Query cover: 3%</p>
 <p>Ident: 67%</p></li>
 </ul>
+<p><strong>Alineamiento</strong></p>
+</div>
+</div>
+</div>
+                Query  40  CAACHS  45
+           CA+CH+
+Sbjct  49  CASCHT  54
+                
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="calcula-con-mammoth-los-alineamientos-estructurales-de-los-dominios-que-ya-alineaste-en-3-en-base-a-su-secuencia.-visualízalos-con-rasmol-como-se-explica-en-httpeead-csic-compbio.github.iobioinformatica_estructuralnode32.html.-el-software-está-en-homecompu2algoritmos3dsoftmammoth-1.0-src-para-que-lo-copien-y-compilen-con-gfortram-como-se-explica-en-readme-cambiando-g77-por-gfortran.">4) Calcula con mammoth los alineamientos estructurales de los dominios que ya alineaste en 3 en base a su secuencia. Visualízalos con Rasmol como se explica en http://eead-csic-compbio.github.io/bioinformatica_estructural/node32.html. El software está en /home/compu2/algoritmos3D/soft/mammoth-1.0-src para que lo copien y compilen con gfortram como se explica en README, cambiando g77 por gfortran.</h5>
 <h1 id="evzvd-vs-1cc5a">1evzvd vs 1cc5a:</h1>
-<p>Observamos que el sobrelape se encuentra en la región de las alfa-hélices, lo que hace sentido ya que la superfamilia de las citocromo son alfa-hélices. Las regiones no sobrelapantes claramente son loops, evolutivamente tiene sentido ya que son las zonas con menor reelevancia funcional</p>
+<p>Observamos que el sobrelape se encuentra en la región de las alfa-hélices, lo que hace sentido ya que la superfamilia de las citocromo son alfa-hélices. También podemos observar que las regiones loop presentan cierto grado de sobrelape indicando así un gran grado de similitud.</p>
 </div>
 </div>
 </div>
@@ -7503,7 +7538,8 @@ RESPvf8DCjjDisy/j2IAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="evzd-vs-1e8ea">1evzd vs 1e8ea:</h1>
-<p>De la misma manera, observamos sobrelape con alfa-helice. También presenta sobrelape con zonas loop, quizá esas zonas sean reelevantes para mantener la estructura de la proteína y por lo tanto se conservan.</p>
+<p>De la misma manera, observamos sobrelape con alfa-helice. También presenta sobrelape con zonas loop, quizá esas zonas sean reelevantes para mantener la estructura de la proteína y por lo tanto se conservan. En éste caso podemos observar una gran diferencia en las regiones loop.</p>
+<p>De las imagenes podemos concluir que 1evzd es más similar a 1cc5a que a 1e8ea.</p>
 </div>
 </div>
 </div>
@@ -8644,26 +8680,233 @@ BAEAABCCAAAADJj/H5+Jf2C4wC40AAAAAElFTkSuQmCC
 <ul>
 <li>RMSD = 1.83 Angstrom</li>
 </ul>
-<p>Nota: No supimos que alineamiento utilizar para el estructural. Los resultados de RMSD son para los alineamientos con BLAST.</p>
-<h2 id="conclusiones">Conclusiones</h2>
-<p>Para econtrar similitudes entre proteínas es mucho mejor utilizar algoritmos que consideren la estructura en vez de la secuencia. Las estructuras se conservan a pesar que las secuencias divergan mucho, especialmente para proteínas lejanamente emparentadas, en otras palabras, comparar por estructura nos da más información de la similitud entre dos proteínas.</p>
+<p>El RMSD del segundo alineamiento es mucho menor que de el primero, ésto se debe quizá a la calidad del alineamiento, es decir, el segundo alineamiento sólo alineo 5 aminoácidos por lo que no evalúa el error del resto de la secuencia. El primer alineamiento es un poco más grande y tiene un error mucho más grande, ésto se debe a la calidad del alineamiento que no toma en cuenta información estructural y sólo información de identidad de secuencia. Para probarlo utilizaremos los alineamientos obtenidos con MAMMOTH que toman en cuenta información estructural, esperamos que con ese set de alineamientos obtengamos mejores resultados.</p>
+<p><strong>Alineamiento MAMMOTH de 1evzvd vs 1cc5a</strong></p>
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
+                _______________________________________________________________________________
+
+
+                      T U R B O     M  A  M  M  O  T  H
+
+
+               MAtching Molecular Models Obtained from THeory
+
+ _______________________________________________________________________________
+
+  
+
+ -------------------
+  Input information 
+ -------------------
+  
+
+==> PREDICTION: 
+
+     Filename: d1evzvd1.pdbd
+     Number of residues:   199
+
+
+==> EXPERIMENT: 
+
+     Filename: c1cc5a.pdbd
+     Number of residues:    83
+
+  
+ -----------------------------
+  Structural Alignment Scores 
+ -----------------------------
+  
+
+ PSI(ini)=   98.80  NALI=  82  NORM=  83  RMS=   13.24  NSS=  57
+ PSI(end)=   36.14  NALI=  30  NORM=  83  RMS=    3.89
+ Sstr(LG)= 1048.09  NALI=  30  NORM=  83  RMS=    3.89
+
+E-value=     0.69690228E-01
+
+Z-score=      2.3566000        -ln(E)=      2.6636952    
+  
+ ----------------------------
+  Final Structural Alignment 
+ ----------------------------
+  
+                                                                 
+Prediction MTAAEHGLHA PAYAWSHNGP FETFDHASIR RGYQVYREVC AACHSLDRVA
+Prediction HHHHHHHHHH HHHH-SSS-- --HHHHHHHH HHHHHHHHHH H--HHHHHHH
+                                                             ||||
+Experiment ---------- ---------- ---------- ---------- ----SSS--H
+Experiment .......... .......... .......... .......... ....GGGARS
+                                                                 
+  
+                                                                 
+Prediction WRTLVGVSHT NEEVRNMAEE FEYDDEPDEQ GNPKKRPGKL SDYIPGPYPN
+Prediction HHHHH---HH HHHHHHHHHH HHHHHHH--- --SSSSSS-- --SSSSSSSS
+           |||      | ||||||||            | ||||||            |||
+Experiment HHH------H HHHHHHHHHH --------HH ----SS---- -------HHH
+Experiment GDD......V VAKYCNACHG ........TG LLNAPKVGD. .......SAA
+                                                                 
+  
+                                    ******* **    **             
+Prediction EQAARAANQG ALPPDLSLIV KARHGGCDYI FSLLTGYPDE PPAGVALPPG
+Prediction --SSSS---- -SSSS--SSS SS--HHHHHH HHHHHHHHHH HH---SS---
+           |||||                    ||||||| ||     |       ||||  
+Experiment HHHHHH---- ---------- ---SSS-HHH HH----HH-- ----HHH---
+Experiment WKTRAD.... ....A..... ...KGGLDGL LA....QS.. ....LSGLN.
+                                    ******* **    **             
+  
+                           ****             ********** *****   
+Prediction SNYNPYFPGG SIAMARVLFD DMVEYEDGTP ATTSQMAKDV TTFLNWCA
+Prediction -SS------- HHHHHHHHHH HHHH-----S S---HHHHHH HHHHHHHH
+                           |             || |||||||||          
+Experiment ---------- ------SSS- -----SSS-- SS-HHHHHHH HHHHH---
+Experiment .......A.. .....MPPK. .....GTCAD CSDDELKAAI GKMSG...
+                           ****             ********** *****   
+  
+  
+ ---------
+  Timings 
+ ---------
+  
+   < Initialization:                      0.016 sec >
+   < Secondary Structure assignment       0.000 sec >
+   < Structure alignment:                 0.016 sec >
+   < Tertiary structure matching:         0.004 sec >
+   < Text Output                          0.000 sec >
+
+                
+<div class="cell border-box-sizing text_cell rendered">
 <div class="prompt input_prompt">
-In&nbsp;[]:
 </div>
 <div class="inner_cell">
-    <div class="input_area">
-<div class="highlight"><pre> 
-</pre></div>
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Alineamiento MAMMOTH de 1evzvd vs 1e8ea</strong>:</p>
+</div>
+</div>
+</div>
+                _______________________________________________________________________________
 
-</div>
-</div>
-</div>
 
+                      T U R B O     M  A  M  M  O  T  H
+
+
+               MAtching Molecular Models Obtained from THeory
+
+ _______________________________________________________________________________
+
+  
+
+ -------------------
+  Input information 
+ -------------------
+  
+
+==> PREDICTION: 
+
+     Filename: 1e8e.pdbd
+     Number of residues:   124
+
+
+==> EXPERIMENT: 
+
+     Filename: d1evzvd1.pdbd
+     Number of residues:   199
+
+  
+ -----------------------------
+  Structural Alignment Scores 
+ -----------------------------
+  
+
+ PSI(ini)=   95.97  NALI= 119  NORM= 124  RMS=   14.08  NSS=  73
+ PSI(end)=   23.39  NALI=  29  NORM= 124  RMS=    3.22
+ Sstr(LG)=  977.70  NALI=  29  NORM= 124  RMS=    3.22
+
+E-value=     0.13354469    
+
+Z-score=      1.6246705        -ln(E)=      2.0133191    
+  
+ ----------------------------
+  Final Structural Alignment 
+ ----------------------------
+  
+                                     ****** ********** *****     
+Prediction .......... .......... ...DVTNAEK LVYKYTNIAH SANPMYEAPS
+Prediction ---------- ---------- ---HHHHHHH HHHHHHHHHH H----HHHHH
+                                    ||||||| |||||||       | |||||
+Experiment HHHHHHHHHH HHHH-SSS-- --HHHHHHHH HHHHHHHHHH H--HHHHHHH
+Experiment MTAAEHGLHA PAYAWSHNGP FETFDHASIR RGYQVYREVC AACHSLDRVA
+                                     ****** ********** *****     
+  
+                                                                 
+Prediction I........T D...GKIFFN R...KFKTPS GKEA.....A CASCHTNNPA
+Prediction H--------H H---HHHHHH H---HHH--- --HH-----H HHHHHHH---
+           |        | |   |||||| |   |||||| |||           |      
+Experiment HHHHH---HH HHHHHHHHHH HHHHHHH--- --SSSSSS-- --SSSSSSSS
+Experiment WRTLVGVSHT NEEVRNMAEE FEYDDEPDEQ GNPKKRPGKL SDYIPGPYPN
+                                                                 
+  
+                                                                 
+Prediction NVG.KNIVTG KEIPPLAPRV NTKRFTDIDK VED.....EF T........K
+Prediction --S-SS---- -SSSSS---- ---SSSS--H HHH-----HH H--------H
+                 |||| |              |||||| |||     ||           
+Experiment --SSSS---- -S--SSS--S SSSS--HHHH HHHHHHHHHH HHHH---SS-
+Experiment EQAARAANQG AL..PPDLSL IVKARHGGCD YIFSLLTGYP DEPPAGVALP
+                                                                 
+  
+                                  *                *** ****      
+Prediction HC........ NDI....... .LGA...... .DCSPSEKAN FIAYLLTETK
+Prediction HH-------- H--------- ---H------ -HHHHHHHHH HHHHHHHHHH
+                        |         |||        ||||||||| ||||      
+Experiment ---SS----- --HHHHHHHH HHHHHH---- -SS---HHHH HHHHHHHHHH
+Experiment PGSNYNPYFP GGSIAMARVL FDDMVEYEDG TPATTSQMAK DVTTFLNWCA
+                                  *                *** ****      
+  
+             
+Prediction PT
+Prediction HH
+             
+Experiment --
+Experiment ..
+             
+  
+  
+ ---------
+  Timings 
+ ---------
+  
+   < Initialization:                      0.020 sec >
+   < Secondary Structure assignment       0.000 sec >
+   < Structure alignment:                 0.024 sec >
+   < Tertiary structure matching:         0.004 sec >
+   < Text Output                          0.000 sec >
+  
+
+                
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><strong>Nuevos RMSD</strong></p>
+<ul>
+<li><p>1evzvd vs 1cc5a: 6.72 Angstrom</p></li>
+<li><p>1evzvd vs 1e8ea: 8.75 Angstrom</p></li>
+</ul>
+<h2 id="discusión">Discusión:</h2>
+<p><strong>Primer alineamiento</strong></p>
+<p>El RSMD del primer alineamiento (1evzvd vs 1cc5a) es mucho mejor al original considerando que MAMMOTH alinea toda la secuencia (en constraste de la localidad del alineamiento de BLAST) lo que indica que el alineamiento recupera información más relevante.</p>
+<p><strong>Segundo alinemiento</strong></p>
+<p>El RMSD aumento con el alineamiento de MAMMOTH, pero una vez mas, considerando que el alineamiento de BLAST tiene una covertura de 3% el programa tiene muy pocos aminoácidos que comparar y por lo tanto el error será bajo.</p>
+<p>Si tan solo en el 3% de la secuencia hubo un error de 1.83 Angstroms uno esperaría que al cubrir el 100% el error aumentara en forma proporcional pero no es el caso, una vez más demostrando que la comparación por estructura da resultados mejores</p>
+<p><strong>El RMSD obtenido del alineamiento de BLAST nos da una noción de similitud erronea</strong></p>
+<p>El RMSD del segundo alineamiento con BLAST fue menor al del primero, sugiriendo que 1evzvd es más similar a 1e8ea que a 1cc5a resultado contrario a lo que se había concluido con las imagenes de rasmol.</p>
+<p>El RMSD de MAMMOTH concuerda más con lo visto en las imagenes, a partir del nuevo RMSD podemos decir que 1evzvd es más similar a 1cc5a que a 1cc5a.</p>
+<h2 id="conclusiones">Conclusiones</h2>
+<p>Para econtrar similitudes entre proteínas es mucho mejor utilizar algoritmos que consideren la estructura en vez de la secuencia. Las estructuras se conservan a pesar que las secuencias divergan mucho, especialmente para proteínas lejanamente emparentadas, en otras palabras, comparar por estructura nos da más información de la similitud entre dos proteínas.</p>
+<p>También hay que cuidar mucho con que tipo de algoritmos se realice el alineamiento, lo que conviene en éste contexto particular es utilizar un algoritmo que alinee de manera global.</p>
+</div>
+</div>
 </div>
     </div>
   </div>
