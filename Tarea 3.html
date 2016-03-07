@@ -1687,7 +1687,7 @@ div#notebook {
 <p>Comparar la significancia de las predicciones de similitud entre un alineamiento local y dependiente de la sencuencia (BLAST) y un algoritmo que consdiera información estructural (MAMMOTH)</p>
 <h2 id="instrucciones">Instrucciones</h2>
 <h5 id="selecciona-una-superfamilia-de-proteínas-de-scop-httpscop.berkeley.edu-y-extrae-la-secuencia-de-aminoácidos-atom-records-y-las-coordenadas-pdb-de-varios-dominios-de-la-misma.-podéis-ver-un-ejemplo-de-dominio-en-httpscop.berkeley.edusunid29763-y-abajo-están-tanto-la-secuencia-como-una-liga-para-descargar-las-coordenadas.">1) Selecciona una superfamilia de proteínas de SCOP (http://scop.berkeley.edu) y extrae la secuencia de aminoácidos (ATOM records) y las coordenadas PDB de varios dominios de la misma. Podéis ver un ejemplo de dominio en http://scop.berkeley.edu/sunid=29763 , y abajo están tanto la secuencia como una liga para descargar las coordenadas.</h5>
-<p>Se selecciono la superfamilia de las citocromo, de la cual se descargaron los fasta y los pdb de las siguientes entradas:</p>
+<p>Se seleccionó la superfamilia de las citocromo, de la cual se descargaron los fasta y los pdb de las siguientes entradas:</p>
 <ul>
 <li><p>1e83, Citocromo c' de <em>Alcaligenes xylosoxidans</em>.</p></li>
 <li><p>1cc5a, Citocromo c5 de <em>Azotobacter</em>.</p></li>
@@ -1696,7 +1696,7 @@ div#notebook {
 </ul>
 <h5 id="comprueba-que-las-secuencias-descargadas-coinciden-con-las-coordenadas.">2) Comprueba que las secuencias descargadas coinciden con las coordenadas.</h5>
 <h2 id="funcion-iguales">Funcion iguales:</h2>
-<h3 id="parametros">Parametros:</h3>
+<h3 id="parámetros">Parámetros:</h3>
 <ul>
 <li><em>pathdb</em>: La ruta al archivo pdb</li>
 <li><em>pathfas</em>:La ruta al fasta</li>
@@ -1709,7 +1709,7 @@ div#notebook {
 <p>Función que indica si la secuencia de un archivo pdb y un fasta son iguales</p>
 <h3 id="resultado">Resultado</h3>
 <p>True si las secuencias son iguales</p>
-<p>False si las secuencais no son iguales</p>
+<p>False si las secuencias no son iguales</p>
 </div>
 </div>
 </div>
@@ -1905,7 +1905,7 @@ True
 <div class="text_cell_render border-box-sizing rendered_html">
 <h5 id="calcula-al-menos-dos-alineamiento-pareados-entre-secuencias-de-aminoácidos-de-las-extraídas-en-1-y-calcula-su-identidad-como-el-total-de-parejas-de-residuos-idénticas-total-parejas-alineadas.">3) Calcula al menos dos alineamiento pareados entre secuencias de aminoácidos de las extraídas en 1 y calcula su %identidad como el total de parejas de residuos idénticas / total parejas alineadas.**</h5>
 <p>Con BLAST(bl2seq) que se puede correr desde: http://blast.ncbi.nlm.nih.gov/Blast.cgi?PAGE_TYPE=BlastSearch&amp;BLAST_SPEC=blast2seq&amp;LINK_LOC=align2seq</p>
-<p>Con parametros default comparamos las siguientes secuencias:</p>
+<p>Con parámetros default comparamos las siguientes secuencias:</p>
 <ul>
 <li><p>1evzvd vs 1cc5a:</p>
 <p>Query cover: 23%</p>
@@ -7538,8 +7538,8 @@ RESPvf8DCjjDisy/j2IAAAAASUVORK5CYII=
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h1 id="evzd-vs-1e8ea">1evzd vs 1e8ea:</h1>
-<p>De la misma manera, observamos sobrelape con alfa-helice. También presenta sobrelape con zonas loop, quizá esas zonas sean reelevantes para mantener la estructura de la proteína y por lo tanto se conservan. En éste caso podemos observar una gran diferencia en las regiones loop.</p>
-<p>De las imagenes podemos concluir que 1evzd es más similar a 1cc5a que a 1e8ea.</p>
+<p>De la misma manera, observamos sobrelape con alfa-helice. También presenta sobrelape con zonas loop, quizá esas zonas sean relevantes para mantener la estructura de la proteína y por lo tanto se conservan. En éste caso podemos observar una gran diferencia en las regiones loop.</p>
+<p>De las imágenes podemos concluir que 1evzd es más similar a 1cc5a que a 1e8ea.</p>
 </div>
 </div>
 </div>
@@ -8895,15 +8895,15 @@ Experiment ..
 </ul>
 <h2 id="discusión">Discusión:</h2>
 <p><strong>Primer alineamiento</strong></p>
-<p>El RSMD del primer alineamiento (1evzvd vs 1cc5a) es mucho mejor al original considerando que MAMMOTH alinea toda la secuencia (en constraste de la localidad del alineamiento de BLAST) lo que indica que el alineamiento recupera información más relevante.</p>
+<p>El RSMD del primer alineamiento (1evzvd vs 1cc5a) es mucho mejor al original considerando que MAMMOTH alinea toda la secuencia (en contraste de la localidad del alineamiento de BLAST) lo que indica que el alineamiento recupera información más relevante.</p>
 <p><strong>Segundo alinemiento</strong></p>
-<p>El RMSD aumento con el alineamiento de MAMMOTH, pero una vez mas, considerando que el alineamiento de BLAST tiene una covertura de 3% el programa tiene muy pocos aminoácidos que comparar y por lo tanto el error será bajo.</p>
-<p>Si tan solo en el 3% de la secuencia hubo un error de 1.83 Angstroms uno esperaría que al cubrir el 100% el error aumentara en forma proporcional pero no es el caso, una vez más demostrando que la comparación por estructura da resultados mejores</p>
+<p>El RMSD aumento con el alineamiento de MAMMOTH, pero una vez más, considerando que el alineamiento de BLAST tiene una cobertura de 3% el programa tiene muy pocos aminoácidos que comparar y por lo tanto el error será bajo.</p>
+<p>Si tan solo en el 3% de la secuencia hubo un error de 1.83 Angstroms uno esperaría que al cubrir el 100% el error aumentría en forma proporcional pero no es el caso, una vez más demostrando que la comparación por estructura da resultados mejores</p>
 <p><strong>El RMSD obtenido del alineamiento de BLAST nos da una noción de similitud erronea</strong></p>
-<p>El RMSD del segundo alineamiento con BLAST fue menor al del primero, sugiriendo que 1evzvd es más similar a 1e8ea que a 1cc5a resultado contrario a lo que se había concluido con las imagenes de rasmol.</p>
+<p>El RMSD del segundo alineamiento con BLAST fue menor al del primero, sugiriendo que 1evzvd es más similar a 1e8ea que a 1cc5a resultado contrario a lo que se había concluido con las imágenes de rasmol.</p>
 <p>El RMSD de MAMMOTH concuerda más con lo visto en las imagenes, a partir del nuevo RMSD podemos decir que 1evzvd es más similar a 1cc5a que a 1cc5a.</p>
 <h2 id="conclusiones">Conclusiones</h2>
-<p>Para econtrar similitudes entre proteínas es mucho mejor utilizar algoritmos que consideren la estructura en vez de la secuencia. Las estructuras se conservan a pesar que las secuencias divergan mucho, especialmente para proteínas lejanamente emparentadas, en otras palabras, comparar por estructura nos da más información de la similitud entre dos proteínas.</p>
+<p>Para encontrar similitudes entre proteínas es mucho mejor utilizar algoritmos que consideren la estructura en vez de la secuencia. Las estructuras se conservan a pesar que las secuencias divergan mucho, especialmente para proteínas lejanamente emparentadas, en otras palabras, comparar por estructura nos da más información de la similitud entre dos proteínas.</p>
 <p>También hay que cuidar mucho con que tipo de algoritmos se realice el alineamiento, lo que conviene en éste contexto particular es utilizar un algoritmo que alinee de manera global.</p>
 </div>
 </div>
