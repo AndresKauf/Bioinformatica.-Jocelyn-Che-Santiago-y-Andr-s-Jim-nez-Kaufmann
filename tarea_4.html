@@ -1684,7 +1684,7 @@ div#notebook {
 <h1 id="modelado-de-proteínas-por-homología">Modelado de proteínas por homología</h1>
 <p><strong>Autores: Jocelyn Cheé Santiago y Andrés Jiménez Kaufmann</strong></p>
 <h2 id="objetivo">Objetivo</h2>
-<p>El objetivo de esta práctica es generar un par de modelos proteícos para una secuencia que ya conocemos (sabemos su estructura) y comparalos con su estructura real para ver qué tanto se aleja la predicción de la realidad. Para saber la calidad del modelo utilizaremos el DOPE score, compararemos el sobrelape con la estructura real con MAMMOTH y evaluaremos el RMSD de los modelos.</p>
+<p>El objetivo de esta práctica es generar un par de modelos protéicos para una secuencia que ya conocemos (sabemos su estructura) y compararlos con su estructura real para ver qué tanto se aleja la predicción de la realidad. Para saber la calidad del modelo utilizaremos el DOPE score, compararemos el sobrelape con la estructura real con MAMMOTH y evaluaremos el RMSD de los modelos.</p>
 <h2 id="instrucciones">Instrucciones</h2>
 <h5 id="elige-una-secuencia-s-de-la-superfamilia-que-elegiste-para-la-tarea-3.">1) Elige una secuencia S de la superfamilia que elegiste para la tarea 3.</h5>
 <p>Se eligió la secuencia de 1ezvd1 Citocromo bc1 de levadura.</p>
@@ -1716,7 +1716,7 @@ DDMVEYEDGTPATTSQMAKDVTTFLNWCAE*
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>El DOPE score del modelo uno fue: -9596.15918</p>
 <p>El DOPE del modelo dos fue: -10088.11816</p>
-<p>Ambos scores fueron buenos ya que el error asociado a esos DOPE socres es de aproximadamente 5A lo cual nos puede brindar una muy buena idea de la estructura de una proteína.</p>
+<p>Ambos scores fueron buenos ya que el error asociado a esos DOPE scores es de aproximadamente 5A lo cual nos puede brindar una muy buena idea de la estructura de una proteína.</p>
 <h5 id="evalúa-la-calidad-de-los-modelos-m-obtenidos-comparándolos-con-la-estructura-conocida-que-descargaste-de-scop-en-la-tarea-3.-para-ello-puedes-usar-mammoth.-en-tu-informe-por-favor-indica-el-alineamiento-obtenido-el-rmsd-y-al-menos-una-imagen-de-su-superposición-para-brevemente-comentar-las-diferencias-que-observas-entre-cada-modelo-y-la-estructura-experimental.">4) Evalúa la calidad de los modelos M obtenidos comparándolos con la estructura conocida, que descargaste de SCOP en la tarea 3. Para ello puedes usar MAMMOTH. En tu informe por favor indica el alineamiento obtenido, el RMSD y al menos una imagen de su superposición para brevemente comentar las diferencias que observas entre cada modelo y la estructura experimental.</h5>
 <ul>
 <li><p>Cálculo de RMSD:</p>
@@ -3393,7 +3393,7 @@ AAQcAAAAAHCA/x8Y24wkkzI8RwAAAABJRU5ErkJggg==
 <ul>
 <li><p>Valor de RMSD = 17.60 Angstrom</p></li>
 <li><p>Observaciones:</p>
-<p>Sabemos que citocromos son proteínas pertenecientes a un grupo más grande que es de sólo alfa-hélices. Esperariamos observar que la predicción tienen un buen sobrelape con las estructuras hélicas ya que ésta es la principal característica de citocromo. En efecto, como podemos observar en la imagen el mayor sobrelape se observa en las zonas helicales. Ocurre lo contrario con zonas de loop que como podemos observar sobrelapan poco o nada.</p></li>
+<p>Sabemos que citocromos son proteínas pertenecientes a un grupo más grande que es de sólo alfa-hélices. Esperaríamos observar que la predicción tienen un buen sobrelape con las estructuras hélicas ya que ésta es la principal característica de citocromo. En efecto, como podemos observar en la imagen el mayor sobrelape se observa en las zonas helicales. Ocurre lo contrario con zonas de loop que como podemos observar sobrelapan poco o nada.</p></li>
 </ul>
 <p><strong>Esctructura exprimental vs Modelo 2</strong></p>
 <ul>
@@ -4951,7 +4951,7 @@ vgQU7SUAAAAASUVORK5CYII=
 <p>Los valores de RMSD tan altos que obtuvimos se debe a las zonas no conservadas de la estructura, entonces el error se acumula y llega a valores altos.</p>
 <h3 id="las-regiones-conservadas-sobrelapan">Las regiones conservadas sobrelapan:</h3>
 <p>La proteína que analizamos es perteneciente a la superfamilia de las citocromo, caracterizadas por la presencia de sólo alfa-hélices. La proteína que sirvió como templado es citocromo C2 de <em>Rhodobacter capsulatus</em>, no es sorpresa que la región de álfa hélice haya tenido buen sobrelape. Es notable que se pudo obtener un buen modelo, al menos en lo que respecta a las alfa hélices, a pesar de que la secuencia templado sea tan lejana evolutivamente, ésto habla de una gran constricción funcional de dicha estructura.</p>
-<h2 id="conlcusiones">Conlcusiones:</h2>
+<h2 id="conclusiones">Conclusiones:</h2>
 <p>Se pueden obtener buenos modelos de proteínas por medio de homología estructural aunque el organismo de la proteína templado esté sumamente alejado (tan lejano como dominios diferentes) del organismo de la proteína de interés.</p>
 <p>La calidad o utilidad de la predicción dependerá exclusivamente de la pregunta que se intente responder. Si se pretende crear anotaciones estructurales y funcionales a partir de éstas predicciones habrá que ser muy crítico en la elección de la proteína templado y en el valor DOPE que resulte de éstos ya que como vimos, el error se propagará al compararse con la estructura real de la proteína de interés y nos puede brindar resultados no tan útiles para anotar secuencias.</p>
 </div>
